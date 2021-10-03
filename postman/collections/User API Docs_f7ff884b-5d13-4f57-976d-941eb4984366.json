@@ -21,9 +21,9 @@
                     ],
                     "query": [
                         {
+                            "description": "(Required) ID of the user",
                             "key": "id",
-                            "value": "-79565356",
-                            "description": "(Required) ID of the user"
+                            "value": "-79565356"
                         }
                     ]
                 }
@@ -59,11 +59,14 @@
                     },
                     "status": "OK",
                     "code": 200,
-                    "_postman_previewlanguage": "json",
+                    "_postman_previewlanguage": "Text",
                     "header": [
                         {
                             "disabled": false,
-                            "description": "A link to the next page of responses",
+                            "description": {
+                                "content": "A link to the next page of responses",
+                                "type": "text/plain"
+                            },
                             "key": "x-next",
                             "value": "officia sit"
                         },
@@ -74,7 +77,7 @@
                     ],
                     "cookie": [],
                     "responseTime": null,
-                    "body": "{\n \"id\": 116251,\n \"name\": \"quis consequat sunt nostrud\",\n \"tag\": \"ipsum labore cupidatat \"\n}"
+                    "body": "{\n \"id\": 116251,\n \"name\": \"quis consequat sunt nostrud\",\n \"tag\": \"ipsum labore cupidatat \",\n \"dob\": \"ad proident\"\n}"
                 },
                 {
                     "id": "1b126ca8-8195-4036-a154-3e99e5d4517d",
@@ -106,7 +109,7 @@
                     },
                     "status": "Internal Server Error",
                     "code": 500,
-                    "_postman_previewlanguage": "json",
+                    "_postman_previewlanguage": "Text",
                     "header": [
                         {
                             "key": "Content-Type",
