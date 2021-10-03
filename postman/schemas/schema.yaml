@@ -3,7 +3,7 @@ info:
   version: 1.0.0
   title: User
 servers:
-  - url: 'https://api.mock.co.uk'
+  - url: 'https://api.mock.com'
 security:
     - BasicAuth: []
 paths:
