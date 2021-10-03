@@ -6,7 +6,7 @@
     },
     "item": [
         {
-            "name": "Sample endpoint: Returns details about a particular user",
+            "name": "Gets details about a particular user",
             "id": "76af3f96-e695-488d-9ab9-f60db47350ec",
             "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -34,7 +34,7 @@
             "response": [
                 {
                     "id": "fbce3495-ef36-4746-bbe5-540e029caac9",
-                    "name": "Sample response: Details about a user by ID",
+                    "name": "Get User details for 1",
                     "originalRequest": {
                         "method": "GET",
                         "header": [
@@ -65,23 +65,17 @@
                     "_postman_previewlanguage": "json",
                     "header": [
                         {
-                            "disabled": false,
-                            "description": "A link to the next page of responses",
-                            "key": "x-next",
-                            "value": "ipsum in veniam nulla"
-                        },
-                        {
                             "key": "Content-Type",
                             "value": "application/json"
                         }
                     ],
                     "cookie": [],
                     "responseTime": null,
-                    "body": "{\n \"id\": 3659961,\n \"name\": \"Lorem non sint\",\n \"dob\": \"irure velit occaecat deserunt ad\",\n \"tag\": \"ipsum Ut elit laborum\"\n}"
+                    "body": "{\n \"id\": 1,\n \"name\": \"Sundip Nair\",\n \"dob\": \"20/12/1981\",\n \"tag\": \"ipsum Ut elit laborum\"\n}"
                 },
                 {
                     "id": "75b8cb93-117e-4597-8805-ec51b70e3013",
-                    "name": "Unexpected error",
+                    "name": "Get User details for 'abbd'",
                     "originalRequest": {
                         "method": "GET",
                         "header": [
@@ -92,7 +86,7 @@
                             }
                         ],
                         "url": {
-                            "raw": "{{baseUrl}}/user?id=-1",
+                            "raw": "{{baseUrl}}/user?id=abbd",
                             "host": [
                                 "{{baseUrl}}"
                             ],
@@ -102,7 +96,7 @@
                             "query": [
                                 {
                                     "key": "id",
-                                    "value": "-1"
+                                    "value": "abbd"
                                 }
                             ]
                         }
@@ -118,7 +112,44 @@
                     ],
                     "cookie": [],
                     "responseTime": null,
-                    "body": "{\n \"code\": 12886645,\n \"message\": \"mollit irure in\"\n}"
+                    "body": "{\n \"code\": 500,\n \"message\": \"Internal Server Error\"\n}"
+                },
+                {
+                    "id": "d0c23837-8edf-442c-82b9-7d6b6960ee91",
+                    "name": "Gets User details for minus 1",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/user?id=-1",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "user"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "-1",
+                                    "description": "(Required) ID of the user"
+                                }
+                            ]
+                        }
+                    },
+                    "code": 404,
+                    "_postman_previewlanguage": null,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "description": "",
+                            "type": "text"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\r\n \"code\": 404,\r\n \"message\": \"User not found\"\r\n}"
                 }
             ]
         }
@@ -138,12 +169,26 @@
             }
         ]
     },
-    "variable": [
+    "event": [
         {
-            "id": "afe10fd4-c1d3-4d5f-889b-742b57e85e0d",
-            "key": "baseUrl",
-            "value": "https://api.mock.com",
-            "type": "string"
+            "listen": "prerequest",
+            "script": {
+                "id": "d8fbce55-995d-4a1b-8fee-fd9696fc9ee7",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "2bd41056-c52d-46cc-ad20-c971f7a9d796",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
         }
     ]
 }

@@ -6,7 +6,7 @@
     },
     "item": [
         {
-            "name": "Sample endpoint: Returns details about a particular user",
+            "name": "get User",
             "id": "3308d3b1-03f5-4611-a435-e69cef270907",
             "request": {
                 "method": "GET",
@@ -26,7 +26,8 @@
                             "value": "-79565356"
                         }
                     ]
-                }
+                },
+                "description": "Get details of a particular user"
             },
             "response": [
                 {
@@ -62,17 +63,9 @@
                     "_postman_previewlanguage": "Text",
                     "header": [
                         {
-                            "disabled": false,
-                            "description": {
-                                "content": "A link to the next page of responses",
-                                "type": "text/plain"
-                            },
-                            "key": "x-next",
-                            "value": "officia sit"
-                        },
-                        {
                             "key": "Content-Type",
-                            "value": "application/json"
+                            "value": "application/json",
+                            "enabled": true
                         }
                     ],
                     "cookie": [],
@@ -121,6 +114,131 @@
                     "body": "{\n \"code\": -82997555,\n \"message\": \"dolore dolor\"\n}"
                 }
             ]
+        },
+        {
+            "name": "post User",
+            "id": "4a2dfd43-ffc1-4267-8b5b-acf6bc76d008",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/user",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "user"
+                    ]
+                },
+                "description": "Create a user"
+            },
+            "response": [
+                {
+                    "id": "af6b2ae3-9ed1-4f99-8c2e-075e0cec2f1a",
+                    "name": "User has been successfully created",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/user",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "user"
+                            ]
+                        }
+                    },
+                    "status": "Created",
+                    "code": 201,
+                    "_postman_previewlanguage": "Text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"code\": -62610346,\n \"message\": \"pariatur incididunt\"\n}"
+                },
+                {
+                    "id": "ee0ba7d9-165f-44ff-8643-307534c41193",
+                    "name": "Bad request. Check data sent",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/user",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "user"
+                            ]
+                        }
+                    },
+                    "status": "Bad Request",
+                    "code": 400,
+                    "_postman_previewlanguage": "Text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"code\": -62610346,\n \"message\": \"pariatur incididunt\"\n}"
+                },
+                {
+                    "id": "93ab7149-e696-400f-99ef-7d07d99e6dcc",
+                    "name": "Unexpected error",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/user",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "user"
+                            ]
+                        }
+                    },
+                    "status": "Internal Server Error",
+                    "code": 500,
+                    "_postman_previewlanguage": "Text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"code\": -62610346,\n \"message\": \"pariatur incididunt\"\n}"
+                }
+            ]
         }
     ],
     "auth": {
@@ -142,7 +260,7 @@
         {
             "id": "9a65a83a-75fd-4fc8-94df-054992e72756",
             "key": "baseUrl",
-            "value": "https://petstore.swagger.io/v1",
+            "value": "",
             "type": "string"
         }
     ]
