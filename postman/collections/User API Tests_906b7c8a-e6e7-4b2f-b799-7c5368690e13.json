@@ -15,7 +15,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{url}}/user?id=-1",
+                    "raw": "{{url}}/user?id=1",
                     "host": [
                         "{{url}}"
                     ],
@@ -25,7 +25,7 @@
                     "query": [
                         {
                             "key": "id",
-                            "value": "-1",
+                            "value": "1",
                             "description": "(Required) ID of the user"
                         }
                     ]
@@ -75,7 +75,7 @@
                 },
                 {
                     "id": "75b8cb93-117e-4597-8805-ec51b70e3013",
-                    "name": "Get User details for 'abbd'",
+                    "name": "Get User details for 'abc'",
                     "originalRequest": {
                         "method": "GET",
                         "header": [
@@ -86,7 +86,7 @@
                             }
                         ],
                         "url": {
-                            "raw": "{{baseUrl}}/user?id=abbd",
+                            "raw": "{{baseUrl}}/user?id=abc",
                             "host": [
                                 "{{baseUrl}}"
                             ],
@@ -96,7 +96,7 @@
                             "query": [
                                 {
                                     "key": "id",
-                                    "value": "abbd"
+                                    "value": "abc"
                                 }
                             ]
                         }
@@ -150,6 +150,77 @@
                     "cookie": [],
                     "responseTime": null,
                     "body": "{\r\n \"code\": 404,\r\n \"message\": \"User not found\"\r\n}"
+                }
+            ]
+        },
+        {
+            "name": "Create User",
+            "id": "76845123-d0f1-400c-bb96-238f1b70d5b6",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n \"name\": \"Sundip Nair\",\r\n \"dob\": \"20/12/1981\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}/user",
+                    "host": [
+                        "{{url}}"
+                    ],
+                    "path": [
+                        "user"
+                    ]
+                }
+            },
+            "response": [
+                {
+                    "id": "21110b9d-7b22-4e4a-85d8-77275687ea39",
+                    "name": "Create User - Correct data",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"name\": \"Sundip Nair\",\r\n    \"dob\": \"20/12/1981\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/user",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "user"
+                            ]
+                        }
+                    },
+                    "status": "Created",
+                    "code": 201,
+                    "_postman_previewlanguage": "json",
+                    "header": null,
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"id\": 1,\n \"name\": \"Sundip Nair\",\n \"dob\": \"20/12/1981\",\n \"tag\": \"ipsum Ut elit laborum\"\n}"
                 }
             ]
         }
