@@ -3,7 +3,7 @@ info:
   version: 1.0.0
   title: User
 servers:
-  - url: 'https://api.mock.com'
+  - url: 'https://0bc030b0-ce4a-439f-b2c9-b3137c7ebefd.mock.pstmn.io'
 security:
     - BasicAuth: []
 paths:
