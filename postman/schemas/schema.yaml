@@ -2,6 +2,11 @@ openapi: 3.0.0
 info:
   version: 1.0.0
   title: User
+  contact: 
+    email: asd@as.com
+  description: 'User API'
+tags:
+  - name: user 
 servers:
   - url: ''
 security:
@@ -9,8 +14,8 @@ security:
 paths:
   /user:
     get:
-      summary: 'Sample endpoint: Returns details about a particular user'
-      operationId: listUser
+      description: 'Get details of a particular user'
+      operationId: getUser
       tags:
         - user
       parameters:
@@ -20,19 +25,50 @@ paths:
           required: true
           schema:
             type: integer
-            format: int32
+            format: int64
       responses:
         '200':
           description: 'Sample response: Details about a user by ID'
-          headers:
-            x-next:
-              description: A link to the next page of responses
-              schema:
-                type: string
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      description: 'Create a user'
+      operationId: postUser
+      tags:
+        - user
+      responses:
+        '201':
+          description: 'User has been successfully created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: 'Bad request. Check data sent'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'          
         default:
           description: Unexpected error
           content:
