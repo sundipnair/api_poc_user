@@ -155,6 +155,26 @@
         },
         {
             "name": "Create User",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "9430d2d2-c4b6-4443-a9b0-e5f0c41618e5",
+                        "exec": [
+                            "pm.test(\"Status Code is 201\", function(){\r",
+                            "    const responseJson = pm.response.json();\r",
+                            "    pm.expect(responseJson.code).to.eql(201);\r",
+                            "});\r",
+                            "\r",
+                            "pm.test(\"Id returned back is 1\", function(){\r",
+                            "    const responseJson = pm.response.json();\r",
+                            "    pm.expect(responseJson.id).to.eql(1);\r",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
             "id": "76845123-d0f1-400c-bb96-238f1b70d5b6",
             "protocolProfileBehavior": {
                 "disableBodyPruning": true

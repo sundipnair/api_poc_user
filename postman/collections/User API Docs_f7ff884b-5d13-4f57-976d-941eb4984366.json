@@ -12,18 +12,18 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{baseUrl}}/user?id=-79565356",
+                    "raw": "{{url}}/user?id=-79565356",
                     "host": [
-                        "{{baseUrl}}"
+                        "{{url}}"
                     ],
                     "path": [
                         "user"
                     ],
                     "query": [
                         {
-                            "description": "(Required) ID of the user",
                             "key": "id",
-                            "value": "-79565356"
+                            "value": "-79565356",
+                            "description": "(Required) ID of the user"
                         }
                     ]
                 },
@@ -118,13 +118,16 @@
         {
             "name": "post User",
             "id": "4a2dfd43-ffc1-4267-8b5b-acf6bc76d008",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
             "request": {
                 "method": "POST",
                 "header": [],
                 "url": {
-                    "raw": "{{baseUrl}}/user",
+                    "raw": "{{url}}/user",
                     "host": [
-                        "{{baseUrl}}"
+                        "{{url}}"
                     ],
                     "path": [
                         "user"
